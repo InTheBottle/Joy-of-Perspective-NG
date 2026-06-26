@@ -1,0 +1,12 @@
+{
+    "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg/master/scripts/vcpkg.schema.json",
+    "name": "jop-patch",
+    "version-string": "1.0.0",
+    "port-version": 0,
+    "description": "SKSE plugin for Joy of Perspective - redirects MOD4/MOD5 to MOD2/MOD3 model paths on TESObjectARMA records.",
+    "homepage": "",
+    "license": "MIT",
+    "dependencies": [
+        "commonlibsse-ng-ae"
+    ]
+}

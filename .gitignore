@@ -1,0 +1,14 @@
+# Build output
+build/
+
+# Visual Studio
+*.vcxproj
+*.vcxproj.filters
+*.sln
+*.user
+*.suo
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
