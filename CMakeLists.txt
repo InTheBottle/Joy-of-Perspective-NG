@@ -6,7 +6,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
-find_package(CommonLibSSE CONFIG REQUIRED)
+# Build CommonLibSSE-NG from source via the extern/ submodule instead of a prebuilt vcpkg port.
+# All three runtimes ON -> a single DLL that loads on Skyrim SE (1.5.x), AE (1.6.x), and VR.
+set(BUILD_TESTS OFF)       # skip CommonLibSSE's own Catch2 test suite
+set(ENABLE_SKYRIM_SE ON)
+set(ENABLE_SKYRIM_AE ON)
+set(ENABLE_SKYRIM_VR ON)
+add_subdirectory(extern/CommonLibSSE-NG)
 
 add_library(${PROJECT_NAME} SHARED src/main.cpp)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
